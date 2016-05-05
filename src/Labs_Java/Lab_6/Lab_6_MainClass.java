@@ -59,7 +59,6 @@ class Pet {
 
     //Возраст
     public int old;
-
 }
 
 class Dog extends Pet {
