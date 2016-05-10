@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 /**
  * Created by Алексей on 11.05.2016.
  */
+
 public class Animal {
     private int power;
 

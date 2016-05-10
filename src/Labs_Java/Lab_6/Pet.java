@@ -87,8 +87,8 @@ class Cat extends Pet {
     }
 
     public void getStat() {
-        System.out.println("\nДанные о коте: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
-                ", имя " + name);
+        System.out.println("Данные о коте: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
+                ", имя " + name + "\n");
     }
 }
 
@@ -114,7 +114,7 @@ class Dog extends Pet {
     }
 
     public void getStat() {
-        System.out.println("\nДанные о собаке: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
-                ", имя " + name);
+        System.out.println("Данные о собаке: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
+                ", имя " + name + "\n");
     }
 }
