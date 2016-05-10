@@ -88,7 +88,7 @@ class Cat extends Pet {
 
     public void getStat() {
         System.out.println("\nДанные о коте: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
-        ", имя " + name);
+                ", имя " + name);
     }
 }
 
