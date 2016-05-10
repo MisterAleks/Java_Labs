@@ -10,18 +10,16 @@ import java.io.InputStreamReader;
 
 public class Pet {
     private int weight;
-
-    public int getWeight() {
-        return this.weight;
-    }
-
     private String gender;
+    private int age;
 
     public String getGender() {
         return this.gender;
     }
 
-    private int age;
+    public int getWeight() {
+        return this.weight;
+    }
 
     public int getAge() {
         return this.age;
