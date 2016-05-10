@@ -18,11 +18,12 @@ public class Animal {
 
         while (true) {
             try {
-                System.out.println("\nВведите силу");
+                System.out.println("Введите силу");
                 power = Integer.parseInt(in.readLine());
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Некорректный ввод");
+                System.out.println("Некорректный ввод\n");
             }
         }
     }
@@ -40,19 +41,21 @@ class Fish extends Animal {
 
         while (true) {
             try {
-                System.out.println("\nВведите съедобность рыбы: 1 - съедобная, 0 - несъедобная:");
+                System.out.println("Введите съедобность рыбы: 1 - съедобная, 0 - несъедобная:");
                 check_fish = Integer.parseInt(in.readLine());
                 if (check_fish == 0) {
                     edibility = false;
+                    System.out.println();
                     break;
                 }
                 if (check_fish == 1) {
                     edibility = true;
+                    System.out.println();
                     break;
                 }
-                System.out.println("Неккоректный ввод");
+                System.out.println("Неккоректный ввод\n");
             } catch (Exception error) {
-                System.out.println("Неккоректный ввод");
+                System.out.println("Неккоректный ввод\n");
             }
         }
     }
@@ -76,11 +79,12 @@ class Ape extends Animal {
 
         while (true) {
             try {
-                System.out.println("\nВведите возраст");
+                System.out.println("Введите возраст");
                 age = Integer.parseInt(in.readLine());
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Неккоректный ввод");
+                System.out.println("Неккоректный ввод\n");
             }
         }
     }
@@ -88,7 +92,6 @@ class Ape extends Animal {
 
 class Human extends Ape {
     public Human() {
-        super();
     }
 
     //Взаимодействие:
@@ -97,20 +100,20 @@ class Human extends Ape {
     public void interaction(Fish fish) {
         if (fish.isEdibility()) {
             if (this.getPower() > fish.getPower()) {
-                System.out.println("Рыба удачно поймана");
+                System.out.println("Рыба удачно поймана\n");
             } else {
-                System.out.println("Рыба слишком велика");
+                System.out.println("Рыба слишком велика\n");
             }
         } else {
-            System.out.println("Рыба несъедобна");
+            System.out.println("Рыба несъедобна\n");
         }
     }
 
     public void interaction(Animal animal) {
         if (this.getPower() > animal.getPower()) {
-            System.out.println("Животное добыто на охоте");
+            System.out.println("Животное добыто на охоте\n");
         } else {
-            System.out.println("Животное опасно, невозможно добыть");
+            System.out.println("Животное опасно, невозможно добыть\n");
         }
     }
 
@@ -119,12 +122,12 @@ class Human extends Ape {
 
             //Допустим, что обезьяны обучаемы только в возрасте от 5 до 18 лет
             if (5 <= ape.getAge() && ape.getAge() <= 18) {
-                System.out.println("Обезьяну можно обучить");
+                System.out.println("Обезьяну можно обучить\n");
             } else {
-                System.out.println("Обезьяна необучаема");
+                System.out.println("Обезьяна необучаема\n");
             }
         } else {
-            System.out.println("Человек слабее обезьяны и не сможет ее обучать");
+            System.out.println("Человек слабее обезьяны и не сможет ее обучать\n");
         }
     }
 }

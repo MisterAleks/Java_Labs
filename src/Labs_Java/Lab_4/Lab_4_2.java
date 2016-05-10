@@ -1,6 +1,8 @@
 package Labs_Java.Lab_4;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by Алексей on 08.02.2016.
@@ -40,13 +42,19 @@ public class Lab_4_2 {
 
         System.out.println("Введите диапазон случайных чисел:");
 
-        //Введены свои методы для чтения
-        //TODO
-        //Посмотреть My.Functions.readInt()
-        //!!!При неккоректном вводе метод вернет 0 и программа все равно заработает
-        //В ряде задач это недопустимо
-        int a = My.Functions.readInt();
-        int b = My.Functions.readInt();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        int a, b;
+
+        while (true) {
+            try {
+                a = Integer.parseInt(in.readLine());
+                b = Integer.parseInt(in.readLine());
+                break;
+            } catch (Exception error) {
+                System.out.println("Ошибка. Попробуйте еще раз:\n");
+            }
+        }
 
         //Заполним массивы случайными числами
         randMassive(A1, a, b);

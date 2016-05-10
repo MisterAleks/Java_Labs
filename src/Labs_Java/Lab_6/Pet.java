@@ -38,7 +38,7 @@ public class Pet {
         while (true) {
             //???
             //При вводе не через Scanner как лучше вводить: разбивать строку и искать вхождения или через Enter?
-            System.out.println("\nВведите вес, пол и возраст (через Enter):");
+            System.out.println("Введите вес, пол и возраст (через Enter):");
 
             try {
                 weight = Integer.parseInt(in.readLine());
@@ -51,14 +51,15 @@ public class Pet {
                     case "ж":
                         break;
                     default:
-                        System.out.println("Ошибка: пол вводится одной буквой!");
+                        System.out.println("Ошибка: пол вводится одной буквой!\n");
                         continue;
                 }
 
                 age = Integer.parseInt(in.readLine());
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Непредвиденная ошибка");
+                System.out.println("Непредвиденная ошибка\n");
             }
         }
     }
@@ -77,9 +78,10 @@ class Cat extends Pet {
 
             try {
                 name = in.readLine();
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Непредвиденная ошибка, попробуйте еще раз");
+                System.out.println("Непредвиденная ошибка, попробуйте еще раз\n");
             }
         }
     }
@@ -103,9 +105,10 @@ class Dog extends Pet {
 
             try {
                 name = in.readLine();
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Непредвиденная ошибка, попробуйте еще раз");
+                System.out.println("Непредвиденная ошибка, попробуйте еще раз\n");
             }
         }
     }

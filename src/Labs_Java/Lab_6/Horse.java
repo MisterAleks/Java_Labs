@@ -18,11 +18,12 @@ public class Horse {
 
         while (true) {
             try {
-                System.out.println("\nВведите имя лошади:");
+                System.out.println("Введите имя лошади:");
                 name = in.readLine();
+                System.out.println();
                 break;
             } catch (Exception error) {
-                System.out.println("Ошибка ввода имени");
+                System.out.println("Ошибка ввода имени\n");
             }
         }
     }
@@ -39,9 +40,9 @@ class Pegas extends Horse {
     //Если в задании имени есть "Пегас"/"пегас" - лошадь полетит
     public void fly() {
         if (this.getName().contains("пегас") || this.getName().contains("Пегас")) {
-            System.out.println("Полетит");
+            System.out.println("Полетит\n");
         } else {
-            System.out.println("Не полетит");
+            System.out.println("Не полетит\n");
         }
     }
 }

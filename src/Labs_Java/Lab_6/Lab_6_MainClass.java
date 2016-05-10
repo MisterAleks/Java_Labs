@@ -25,13 +25,25 @@ public class Lab_6_MainClass {
         pegi.fly();
 
         //Задание №2
+
+        //???
+        //Как избавиться от вызова поясняющей строки ниже, если конструктор родительского класса по умолчанию должен
+        //стоять на первом месте и то, что это кошка, понятно только в самом конце?
+        System.out.println("Кошка");
         Cat meow = new Cat();
         meow.getStat();
 
         //Задание №3
+        System.out.println("Человек");
         Human human = new Human();
+
+        System.out.println("Обезьяна");
         Ape ape = new Ape();
+
+        System.out.println("Рыба");
         Fish fish = new Fish();
+
+        System.out.println("Животное");
         Animal animal = new Animal();
 
         human.interaction(animal);

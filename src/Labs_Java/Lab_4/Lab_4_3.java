@@ -16,7 +16,15 @@ public class Lab_4_3 {
 
         System.out.println();
 
-        My.Functions.sorting_Up_Bubble(A);
+        for (int i = 0; i < A.length - 1; i++) {
+            for (int j = i + 1; j < A.length; j++) {
+                if (A[j] < A[i]) {
+                    int E = A[i];
+                    A[i] = A[j];
+                    A[j] = E;
+                }
+            }
+        }
 
         System.out.println("Отсортированный массив:");
         for (int i = 0; i < A.length; i++) {
