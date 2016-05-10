@@ -27,5 +27,15 @@ public class Lab_6_MainClass {
         //Задание №2
         Cat meow = new Cat();
         meow.getStat();
+
+        //Задание №3
+        Human human = new Human();
+        Ape ape = new Ape();
+        Fish fish = new Fish();
+        Animal animal = new Animal();
+
+        human.interaction(animal);
+        human.interaction(fish);
+        human.interaction(ape);
     }
 }
