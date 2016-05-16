@@ -9,14 +9,14 @@ public class Sedan implements PassengersAuto {
     //Количество посадочных мест для пассажиров + количество занятых мест
     private int seatings;
     private int usageSeatings = 0;
-    private ArrayList passengers = new ArrayList();
+    private ArrayList passengersList = new ArrayList();
 
     //Количество топлива
     private int fuel = 40;
 
     //Посмотреть загруженность машины
     public void viewWorkload() {
-        System.out.println("Пассажиры: " + passengers.toString());
+        System.out.println("Пассажиры: " + passengersList.toString());
         System.out.println("Топлива: " + fuel);
     }
 
@@ -31,7 +31,7 @@ public class Sedan implements PassengersAuto {
     public void passengerIn(String passenger) {
         if (usageSeatings < seatings) {
             usageSeatings++;
-            passengers.add(passenger);
+            passengersList.add(passenger);
         } else {
             System.out.println("Машина забита, мест нет для " + passenger);
         }
@@ -40,7 +40,7 @@ public class Sedan implements PassengersAuto {
     public void passengerOut(String passenger) {
         if (usageSeatings != 0) {
             usageSeatings--;
-            passengers.remove(passenger);
+            passengersList.remove(passenger);
         } else {
             System.out.println("Ну и кого высаживать? Машина пустая");
         }

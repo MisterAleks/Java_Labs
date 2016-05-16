@@ -80,8 +80,8 @@ public class Lab_7_2_MainClass {
         sedan.moveTo("Мытищи", 21);
         System.out.println();
 
-//        pickup.cargoIn(truck);
-//        pickup.viewWorkload();
-//        System.out.println();
+        pickup.cargoIn(truck);
+        pickup.viewWorkload();
+        System.out.println();
     }
 }

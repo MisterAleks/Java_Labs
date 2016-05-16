@@ -9,7 +9,7 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
     //Количество мест для груза + загруженность
     private int cargoSpace;
     private int usageCargoSpace = 0;
-    private ArrayList cargo = new ArrayList();
+    private ArrayList cargoList = new ArrayList();
 
     //Для Pickup (подъемника)
     public int getCargoSpace() {
@@ -24,8 +24,8 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
         usageCargoSpace = 0;
     }
 
-    public ArrayList getCargo() {
-        return cargo;
+    public ArrayList getCargoList() {
+        return cargoList;
     }
 
     //Количество топлива
@@ -34,7 +34,7 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
     //Посмотреть загруженность машины
     public void viewWorkload() {
         super.viewWorkload();
-        System.out.println("Груз: " + cargo.toString());
+        System.out.println("Груз: " + cargoList.toString());
     }
 
     public Truck(int seatings, int cargoSpace) {
@@ -49,7 +49,7 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
     public void cargoIn(String cargo) {
         if (usageCargoSpace < cargoSpace) {
             usageCargoSpace++;
-            this.cargo.add(cargo);
+            this.cargoList.add(cargo);
         } else {
             System.out.println("Грузить уже некуда ваше " + cargo);
         }
@@ -58,7 +58,7 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
     public void cargoOut(String cargo) {
         if (usageCargoSpace != 0) {
             usageCargoSpace--;
-            this.cargo.remove(cargo);
+            this.cargoList.remove(cargo);
         } else {
             System.out.println("Нечего сгружать, загружать надо");
         }
