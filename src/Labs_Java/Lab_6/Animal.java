@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 /**
  * Created by Алексей on 11.05.2016.
+ * Внутри одного файла - один публичный класс
  */
 
 public class Animal {
@@ -35,8 +36,6 @@ class Fish extends Animal {
     private boolean edibility;
 
     public Fish() {
-        super();
-
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int check_fish;
 
@@ -74,9 +73,7 @@ class Ape extends Animal {
     }
 
     public Ape() {
-        super();
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+       BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
             try {
@@ -87,6 +84,14 @@ class Ape extends Animal {
             } catch (Exception error) {
                 System.out.println("Неккоректный ввод\n");
             }
+        }
+    }
+
+    public boolean seeFish(Fish fish) {
+        if (fish.isEdibility()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

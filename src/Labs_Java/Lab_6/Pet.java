@@ -1,6 +1,7 @@
 package Labs_Java.Lab_6;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -8,7 +9,7 @@ import java.io.InputStreamReader;
  * Задание №2
  */
 
-public class Pet {
+public abstract class Pet {
     private int weight;
     private String gender;
     private int age;
@@ -25,52 +26,27 @@ public class Pet {
         return this.age;
     }
 
-    //???
-    //Вопрос о параметрах: как правильнее - вводить с параметрами (передавать вес, пол и пр.) в конструктор
-    //Или создавать стандартный конструктор без параметров (Как сейчас) и использовать System.in?
-
-    //=> Вопрос - во втором случае где оставлять проверку на корректность вводимых данных?
-    //Сильно захламлять main не хочется.
-
-    public Pet() {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
-        while (true) {
-            //???
-            //При вводе не через Scanner как лучше вводить: разбивать строку и искать вхождения или через Enter?
-            System.out.println("Введите вес, пол и возраст (через Enter):");
-
-            try {
-                weight = Integer.parseInt(in.readLine());
-                gender = in.readLine();
-
-                switch (gender) {
-                    case "М":
-                    case "м":
-                    case "Ж":
-                    case "ж":
-                        break;
-                    default:
-                        System.out.println("Ошибка: пол вводится одной буквой!\n");
-                        continue;
-                }
-
-                age = Integer.parseInt(in.readLine());
-                System.out.println();
-                break;
-            } catch (Exception error) {
-                System.out.println("Непредвиденная ошибка\n");
-            }
-        }
+    public void setGender(String g) {
+        gender = g;
     }
+
+    public void setWeight(int w) {
+        weight = w;
+    }
+
+    public void setAge(int a) {
+        age = a;
+    }
+
+    //Убран конструктор Pet, поскольку изменен в абстрактный класс
+    //Создан метод, заполняющий данные о животном
+    public abstract void createPet() throws IOException;
 }
 
 class Cat extends Pet {
     private String name;
 
     public Cat() {
-        super();
-
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
@@ -90,14 +66,46 @@ class Cat extends Pet {
         System.out.println("Данные о коте: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
                 ", имя " + name + "\n");
     }
+
+    public void createPet() throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true) {
+
+            //Ключевой момент переопределения абстрактного метода:
+            //Он практически одинаковый у собаки и кошки, но индивидуально выводится кошка или собака
+            //в зависимости от класса, что подчеркивает явное переопределение абстрактного метода
+            System.out.println("Введите вес, пол и возраст КОШКИ (через Enter):");
+
+            try {
+                setWeight(Integer.parseInt(in.readLine()));
+                setGender(in.readLine());
+
+                switch (getGender()) {
+                    case "М":
+                    case "м":
+                    case "Ж":
+                    case "ж":
+                        break;
+                    default:
+                        System.out.println("Ошибка: пол вводится одной буквой!\n");
+                        continue;
+                }
+
+                setAge(Integer.parseInt(in.readLine()));
+                System.out.println();
+                break;
+            } catch (Exception error) {
+                System.out.println("Непредвиденная ошибка\n");
+            }
+        }
+    }
 }
 
 class Dog extends Pet {
     private String name;
 
     public Dog() {
-        super();
-
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
@@ -116,5 +124,39 @@ class Dog extends Pet {
     public void getStat() {
         System.out.println("Данные о собаке: вес " + getWeight() + ", пол " + getGender() + ", возраст " + getAge() +
                 ", имя " + name + "\n");
+    }
+
+    public void createPet() throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true) {
+
+            //Ключевой момент переопределения абстрактного метода:
+            //Он практически одинаковый у собаки и кошки, но индивидуально выводится кошка или собака
+            //в зависимости от класса, что подчеркивает явное переопределение абстрактного метода
+            System.out.println("Введите вес, пол и возраст СОБАКИ (через Enter):");
+
+            try {
+                setWeight(Integer.parseInt(in.readLine()));
+                setGender(in.readLine());
+
+                switch (getGender()) {
+                    case "М":
+                    case "м":
+                    case "Ж":
+                    case "ж":
+                        break;
+                    default:
+                        System.out.println("Ошибка: пол вводится одной буквой!\n");
+                        continue;
+                }
+
+                setAge(Integer.parseInt(in.readLine()));
+                System.out.println();
+                break;
+            } catch (Exception error) {
+                System.out.println("Непредвиденная ошибка\n");
+            }
+        }
     }
 }
