@@ -24,6 +24,10 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
         usageCargoSpace = 0;
     }
 
+    public void setUsageCargoSpace(int a) {
+        usageCargoSpace = a;
+    }
+
     public ArrayList getCargoList() {
         return cargoList;
     }
@@ -58,7 +62,11 @@ public class Truck extends Sedan implements PassengersAuto, CargoAuto {
     public void cargoOut(String cargo) {
         if (usageCargoSpace != 0) {
             usageCargoSpace--;
-            this.cargoList.remove(cargo);
+            try {
+                this.cargoList.remove(cargo);
+            } catch (Exception error) {
+                System.out.println("Ошибка индекса листа");
+            }
         } else {
             System.out.println("Нечего сгружать, загружать надо");
         }

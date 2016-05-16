@@ -40,7 +40,11 @@ public class Sedan implements PassengersAuto {
     public void passengerOut(String passenger) {
         if (usageSeatings != 0) {
             usageSeatings--;
-            passengersList.remove(passenger);
+            try {
+                passengersList.remove(passenger);
+            } catch (Exception error) {
+                System.out.println("Ошибка индекса листа");
+            }
         } else {
             System.out.println("Ну и кого высаживать? Машина пустая");
         }

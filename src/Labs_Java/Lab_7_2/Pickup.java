@@ -36,10 +36,12 @@ public class Pickup {
             if (cargoList.size() > (truck.getCargoSpace() - truck.getUsageCargoSpace())) {
                 System.out.println("Машина может в себе столько поместить, но для начала ее нужно разгрузить");
             } else {
+                int a = cargoList.size();
                 while (cargoList.size() != 0) {
                     truck.getCargoList().add(cargoList.get(0));
                     cargoList.remove(0);
                 }
+                truck.setUsageCargoSpace(a);
             }
         }
     }
