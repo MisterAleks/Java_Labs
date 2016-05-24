@@ -75,7 +75,7 @@ public class Lab_7_1_MainClass {
         Dog dog1 = new Dog("Шарик");
         Cat catChild1 = cat.getChild();
         Cat catChild2 = cat.getChild();
-        Dog dogChild = dog.getChild();
+        Dog dogChild = dog1.getChild();
         System.out.println(catChild1.name);
         System.out.println(catChild2.name);
         System.out.println(dogChild.name);
