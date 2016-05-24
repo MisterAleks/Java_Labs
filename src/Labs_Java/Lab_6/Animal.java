@@ -86,14 +86,6 @@ class Ape extends Animal {
             }
         }
     }
-
-    public boolean seeFish(Fish fish) {
-        if (fish.isEdibility()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
 
 class Human extends Ape {

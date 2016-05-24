@@ -35,12 +35,14 @@ public class Lab_7_1_MainClass {
     static void checkObject(Object o) {
         while (true) {
             if (o instanceof Cat) {
-                System.out.println("Кошка");
-                break;
-            }
-            if (o instanceof Dog) {
-                System.out.println("Собака");
-                break;
+                try {
+                    o = (Dog) o;
+                    System.out.println("Собака");
+                    break;
+                } catch (Exception error) {
+                    System.out.println("Кошка");
+                    break;
+                }
             }
             if (o instanceof Bird) {
                 System.out.println("Птица");
@@ -62,15 +64,15 @@ public class Lab_7_1_MainClass {
         System.out.println();
 
         //Полиморфизм. Задание №2
-        Cow cow = new Cow();
+        Dog dog = new Dog();
         Lamp lamp = new Lamp();
-        checkObject(cow);
+        checkObject(dog);
         checkObject(lamp);
         System.out.println();
 
         //Полиморфизм. Задание №3
         Cat cat = new Cat("Мурзик");
-        Dog dog = new Dog("Шарик");
+        Dog dog1 = new Dog("Шарик");
         Cat catChild1 = cat.getChild();
         Cat catChild2 = cat.getChild();
         Dog dogChild = dog.getChild();
