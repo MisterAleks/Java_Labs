@@ -79,7 +79,7 @@ Package Lab_7_1:
   
 Package Lab_7_2:
 
-  Lab_7_2_MainClass - abstract classes and interdaces
+  Lab_7_2_MainClass - abstract classes and interfaces
   
 Package Lab_8:
   
