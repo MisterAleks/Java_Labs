@@ -10,7 +10,10 @@ import java.io.InputStreamReader;
 public class Lab_2_1 {
     public static void main(String[] args) throws IOException {
         System.out.println("Введите A и B:");
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));   //Необходимо в объект BufferedReader передать объект System.in для считывания, т.к. System.in считывает только коды символов; следует учесть, что System.in и BufferedReader несовместимы, поэтому используем InputStreamReader
+        //Необходимо в объект BufferedReader передать объект System.in для считывания, 
+        //т.к. System.in считывает только коды символов; следует учесть, что System.in и BufferedReader несовместимы,
+        //поэтому используем InputStreamReader
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String A_str = in.readLine();
         String B_str = in.readLine();   //Считываем строку
         int A = Integer.parseInt(A_str);
