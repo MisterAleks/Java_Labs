@@ -3,6 +3,10 @@ My labs on Java. Getting a great way to programming (and learning English :-)
 
 A brief description of this project on 09.06.2016 (DD/MM/YYYY) 
 
+(Funny. The day after tomorrow to hand over the project Shell sort (you can find it on my repository), and I've been wasting my time)
+
+Great! :-)
+
 (Full details can be found inside needed file, looking comments to the class Main)
 
 Also I will descript only main classes
